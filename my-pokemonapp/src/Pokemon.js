@@ -49,6 +49,7 @@ class Pokemon extends React.Component{
                     </div>
                 }
                   {/* A button which on click will generate random pokemon information */}
+                   // Checking checking
                   <button type="button" onClick={()=>this.getNewPokemon()} >Random Pokemon</button>
            </div>
             
