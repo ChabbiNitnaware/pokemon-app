@@ -42,11 +42,8 @@ class Pokemon extends React.Component{
                 {
                     this.state.loadedCharacter &&
                     <div>
-                       {/* <div className='Image'><a href={this.state.pokemonImage}>{this.state.pokemonImage}</a></div> */}
                        <div><img src={this.state.pokemonImage} alt='not available'></img></div>
-                       {/* Image of pokemon will be generated here */}
                        <h2>Name: {this.state.name}</h2>
-                       {/* <h2>Duplicates everything</h2> */}
                        <h2>Height: {this.state.height}</h2>
                        <h2>Weight: {this.state.weight}</h2>
                        <h2>Moves</h2>
@@ -59,8 +56,6 @@ class Pokemon extends React.Component{
                        </ul>
                     </div>
                 }
-                  {/* A button which on click will generate random pokemon information */}
-                
            </div>
             
         )
