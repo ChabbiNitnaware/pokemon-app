@@ -1,6 +1,7 @@
 import './App.css';
 import React from 'react';
 
+
 class Pokemon extends React.Component{
     constructor(){
         super()
@@ -10,7 +11,7 @@ class Pokemon extends React.Component{
             height : null,
             weight : null,
             pokemonImage : null,
-            // ability : [],
+            moves : [],
         }
     }
     getNewPokemon(){
@@ -19,12 +20,15 @@ class Pokemon extends React.Component{
         fetch(url)
          .then(response=>response.json())
          .then(data=>{
+            console.log(data)
             this.setState({
+                pokemonImage : data.sprites.front_default,
                 name : data.name,
                 height : data.height,
                 weight : data.weight,
-                pokemonImage : data.sprites.front_default,
-                // ability : data.abilities,
+                moves : data.moves,
+            
+                
                 loadedCharacter : true,
             })
          })
@@ -34,22 +38,29 @@ class Pokemon extends React.Component{
         return(
             <div>
                  <h1>Pokemon App</h1>
+                 <button type="button" onClick={()=>this.getNewPokemon()} >Random Pokemon</button>
                 {
                     this.state.loadedCharacter &&
                     <div>
-                       <div className='Image'><a href={this.state.pokemonImage}>{this.state.pokemonImage}</a></div>
+                       {/* <div className='Image'><a href={this.state.pokemonImage}>{this.state.pokemonImage}</a></div> */}
+                       <div><img src={this.state.pokemonImage} alt='not available'></img></div>
                        {/* Image of pokemon will be generated here */}
-                       <h2>{this.state.name}</h2>
+                       <h2>Name: {this.state.name}</h2>
                        {/* <h2>Duplicates everything</h2> */}
-                       <h2>{this.state.height}</h2>
-                       <h2>{this.state.weight}</h2>
-                       {/* <ul>
-                          <li>{this.state.ability}</li>
-                       </ul> */}
+                       <h2>Height: {this.state.height}</h2>
+                       <h2>Weight: {this.state.weight}</h2>
+                       <h2>Moves</h2>
+                       <ul>
+                        {
+                            this.state.moves.map(moves => {
+                                return <li>{moves.move.name}</li>
+                            })
+                        }
+                       </ul>
                     </div>
                 }
                   {/* A button which on click will generate random pokemon information */}
-                  <button type="button" onClick={()=>this.getNewPokemon()} >Random Pokemon</button>
+                
            </div>
             
         )
