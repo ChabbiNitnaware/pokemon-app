@@ -49,8 +49,8 @@ class Pokemon extends React.Component{
                        <h2>Moves</h2>
                        <ul>
                         {
-                            this.state.moves.map(moves => {
-                                return <li>{moves.move.name}</li>
+                            this.state.moves.map((moves,i) => {
+                                return <li key={i}>{moves.move.name}</li>
                             })
                         }
                        </ul>
