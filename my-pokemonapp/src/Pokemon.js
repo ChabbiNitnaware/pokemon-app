@@ -38,7 +38,7 @@ class Pokemon extends React.Component{
         return(
             <div>
                  <h1>Pokemon App</h1>
-                 <button type="button"  class="btn btn-outline-success" onClick={()=>this.getNewPokemon()} >Random Pokemon</button>
+                 <button type="button"  className="btn btn-outline-secondary" onClick={()=>this.getNewPokemon()} >Random Pokemon</button>
                 {
                     this.state.loadedCharacter &&
                     <div>
