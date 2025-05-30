@@ -33,7 +33,7 @@ Bootstrap
 This app uses the PokeAPI:
 
 GET https://pokeapi.co/api/v2/pokemon/{id}
-Replace {id} with a random number between 1 and 10277.
+Replace {id} with a random number between 1 and 1000.
 
 ✨ How It Works
 When the button is clicked, a random number is generated.
