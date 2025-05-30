@@ -15,7 +15,7 @@ class Pokemon extends React.Component{
         }
     }
     getNewPokemon(){
-        const randomNumber = Math.round(Math.random()*307)
+        const randomNumber = Math.round(Math.random()*10277)
         const url = `https://pokeapi.co/api/v2/pokemon/${randomNumber}/`
         fetch(url)
          .then(response=>response.json())
