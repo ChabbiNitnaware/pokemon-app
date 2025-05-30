@@ -36,13 +36,16 @@ class Pokemon extends React.Component{
     }
     render(){
         return(
-            <div>
-                 <h1>Pokemon App</h1>
-                 <button type="button"  className="btn btn-outline-secondary" onClick={()=>this.getNewPokemon()} >Random Pokemon</button>
-                {
+            <div className="container-fluid text-center">
+                  <h2>
+                    <small className="text-body-secondary">See your </small>
+                    Pokemon
+                   </h2>
+                  <button type="button"  className="btn btn-outline-info btn-lg" onClick={()=>this.getNewPokemon()} >Click Me</button>
+                 {
                     this.state.loadedCharacter &&
                     <div>
-                       <div><img src={this.state.pokemonImage} alt='not available'></img></div>
+                       <div><img className="object-fit-sm-contain" height={200} width={200} src={this.state.pokemonImage} alt='not available'></img></div>
                        <h2>Name: {this.state.name}</h2>
                        <h2>Height: {this.state.height}</h2>
                        <h2>Weight: {this.state.weight}</h2>
@@ -55,7 +58,7 @@ class Pokemon extends React.Component{
                         }
                        </ul>
                     </div>
-                }
+                  }
            </div>
             
         )
